@@ -1,43 +1,43 @@
 # C4-PlantUML
-English | [简体中文](https://github.com/scott-wong/C4-PlantUML/blob/master/README.zh-cn.md)
+[English](https://github.com/scott-wong/C4-PlantUML/blob/master/README.md) | 简体中文
 
 ![Container diagram for Internet Banking System](http://www.plantuml.com/plantuml/png/pPLjZzCu4CVVzrECojlssbrWsKFTYZwmEX2zwrrw1n8WD4ccgOLZHxQpfHnyztDSDoJhLjp3eYChhTePpzy__psPFj46bIbptj7lcIXGOGufhR7aPaKVp8IpJEGa32Js7wd6ggt2uYLBpGREXyD6FCSF2z8QCuhOHuApXysaeiIWo3Z1dnsmJsGrIPfTGTTIc7t1kSle3QPooqG6Q-IQEf-RW6WmHltVH2PAoQrNc4ak5ToxS8-BL4fXjAd_-TYnHgDObY95jHkF3tHjXbF4ms23MnWFtEEYKwbIKgVYaTbnWXJrXj9Jb0KfBOLZ37cyyBLxQemmEiNaVQQgy_hSyFB1-QDfY3XyT7zwSNsAnROPAO7ytRU1khYi_aAeoqdrTmfAxxIX_AvPpiukBgVpaEN-xD7rRFXLWxuDr8_kEMrG-E9z3_vubE_4dk3E4YkEJ92wQvm7zo_dyuV_qAB_ZyR80eo4M1eZBH6hB69IT3Oi9T0rH8TJHY85nRADwNowWjPZlw_i8lZK-JJoGsRiCx0V6YxbN_KwTMYCvXhVOcEtODymBkwlEQXjhl6dtTVMbjgK9T_pTmmpd61MvrA6MNKLQwdWcQWaoLWNXRsZ328dtQcx1hfNLxDIMwD8lH5l14mWyLz1hi5i269RseCjCnj_AEGk1fWazbgCxa9ZkAEk1Tgx12Ylzonlkz3y1NC2PxvZMW8lAOP9KN2Me67IiWu68yq-qkEpy_7hvtY3FOWALIal_fYz7Gsgt7WmSAUQ4sSt5j4TI1iha3WtIHX0aRfm3HWVl5fEkj1kP0ktfVWT5aN85x7gKt-96LMS8L-KA5QO7an4Ld9Kjn2NIjwmb3GWvyTvrgLmZOoScHqOQOrsFckuOLYLC5NHGQpaLfCwmguB3BaNCcRy2FBiNWzUOOwAYPEem5dE3AMWorXRLBd-s-WwOC_t82dTi8H2Uf-lpVUZnfrXxZ-tJn3z-W8EcLj7Y8nKfA7Kf41HnhHHQFc0YRLKkMkm7cniNGfOcWqaYb8IXY7NlQhnIMlWChDVo2G_XB0rNUZtPFdiQtqybybxKlKxVQfLlkApizRkTeGkHhk1IAsNp0xC5jxJ_W8PzuF2RRVQ433XPzE29KfgkJRmz4EoiLNanrKNmfz5jnVbo0wHzbPs8x5McDEjyTIy8UJyq5M93TGdRLmKO2nBywMbUlLawe5HA3GwJ_nTdUJqoWVIWnpq--F3Im-FA-ohtpNfzhNzj5ejeo-tr6rNwmB_NMMZvHi2tSu1fwNjPvnDsvYhRjpooVrHxqJIW-VHBpyF0fR6zdUYLx-oe_uHiTy8Kmrh9NCtaxUA6T9WP7i3hp-VpewvPfNxhOxpsX49gqtzAbDfTZlDHROg00gAIir4TembMgoMJPQca7MjtLTDumAjWNVlrU95QDuJgrdc_2y0 "Container diagram for Internet Banking System")
 
-C4-PlantUML combines the benefits of [PlantUML](http://en.plantuml.com/) and the [C4 model](https://c4model.com/) for providing a simple way of describing and communicate software architectures - especially during up-front design sessions - with an intuitive language using open source and platform independent tools.
+C4-PlantUML结合[PlantUML](http://en.plantuml.com/)和[C4 model](https://c4model.com/)的优势提供一种描述并沟通软件架构的方法，特别是在前期设计会议中-作为开源和平台独立工具使用。
 
-C4-PlantUML includes macros, stereotypes, and other goodies (like VSCode Snippets) for creating C4 diagrams with PlantUML.
+C4-PlantUML包含用于使用PlantUML创建C4模型图的宏，构造型和其他优点（如VS Code代码段）。
 
-* [Getting Started](#getting-started)
-* [Supported Diagram Types](#supported-diagram-types)
-* [Snippets for Visual Studio Code](#snipptes-for-visual-studio-code)
-* [Layout Options](#layout-options)
-* [Samples](#advanced-samples)
-* [Background](#background)
+* [快速上手](#快速开始)
+* [支持架构图的类型](#支持架构图的类型)
+* [Visual Studio Code代码段](#VSCode代码段)
+* [布局选项](#布局选项)
+* [更多样例](#更多样例)
+* [背景](#背景)
 * [License](#license)
 
-## Getting Started
+## 快速开始
 
-At the top of your C4 PlantUML `.puml` file, you need to include the `C4_Context.puml`, `C4_Container.puml` or `C4_Component.puml` file found in the `root` of this repo.
+在C4 PlantUML `.puml` 文件顶部需要引入本仓库根目录的`C4_Context.puml`, `C4_Container.puml` or `C4_Component.puml` 文件。
 
-To be independent of any internet connectifity, you can also download the files found in the `root` and reference it locally with
+不联网情况可以提前下载相关文件并通过如下方式引入
 
-```c#
+```js
 !include path/to/C4_Container.puml
 ```
 
-Just remember to change the `!include` statements inside the top of the files.
+记得修改文件顶部的 `!include` 这段。
 
-If you want to use the always up-to-date version in this repo, use the following:
+如果你想始终使用最新版请按如下方式引入：
 
-```c#
+```js
 !includeurl https://raw.githubusercontent.com/scott-wong/C4-PlantUML/master/C4_Container.puml
 ```
 
-Now let's create a C4 Container diagram:
+现在创建一个C4模型图:
 
-After you have included `C4_Container.puml` you can use the defined macro definitions for the C4 elements: `Person`, `Person_Ext`, `System`, `System_Ext`, `Container`, `Relationship`, `Boundary`, and `System_Boundary`
+引入 `C4_Container.puml`后你可以使用这些宏定义对应C4的不同元素: `Person`, `Person_Ext`, `System`, `System_Ext`, `Container`, `Relationship`, `Boundary`, and `System_Boundary`
 
-```csharp
+```js
 @startuml C4_Elements
 !includeurl https://raw.githubusercontent.com/scott-wong/C4-PlantUML/master/C4_Container.puml
 
@@ -51,11 +51,10 @@ Rel(personAlias, containerAlias, "Label", "Optional Technology")
 
 ![C4_Elements](http://www.plantuml.com/plantuml/png/xLXhKziu5FtkNw663oqpOGcq1PODcUPX2hCXOV8Ojaix6H4hYQUEv96KGdQx_tqbsH5EX5Phf_2fOWQCTU-vvrx9HuyFZ4FA5_F8UmsQ92AKYOSTP_EyLm6QX1W1l-rV-Pt1wBmhVZMxxMuFx9ohvWcaFbz68Pxcn1pupOjEWjY__DC71uUUnxw6E8OKpe4mWek83z03hqVX5CyHvc0iVY6QDRkdCBu90pu3XvLAvlqSFbmXnk0KzSE_43XuNybwKJJc44yZ1FxsW6XzWOe8NyRed62UU1og7ZQ30RaNoO49Z1Zo_id2r2abzoc4AYlOEL9DlP5Gvjji00bcSgfMxyW21v0kQxKLlmqM5iuL8y86ZtUggRSDGWD4RU_bY28GG3P3WQJv6hJXaYnulY6EY63Shd_g3WUZUd_K_zqVD2yoAT_1yTSfbSccF7pVRxIQ6OiPnC4z3Jb7672wGEO4aTbru1o1KfFCmp7eGyp0LR_a9NC5J0YHVweJ8kUF37D6KL2xWHIBUfvMzsL73JGfWXm5mfo286JZ1MCXmMM04GeOu0JS8V0DHc4WhRnN20UFAUfyLxaEkjUZLlUc8_nYvKiu9u9nACTOm6xQj_tpmQXt-V5Y028quTA5XjCPptY8mZUIMH6Yl1zlwhXyWqOY0yZA08qYU8UYtSo7K3exIz-MmDeCX0oaVcv0-I1dvDF0u3Rf_MAF83BheGZAbDaiZ7CcAbn7Aqu7vHNeuHezNTApKcaNh8op7TeFd4hokYovmd0qdk6judt6-_jL9hxZqmsXhDscy5-g-xA_jhzVMgk1u3QXP5uMPYGprYbjiwiCIdjxjTAk4qCdPeAPDXfrhMuDySc_IHsKjqdGx9CCgtjxag4RokJfCDBWQ-WT9Bx0EqAB55DaxSOgMjIdQwfZ52okm7H3RblaJUAj8iMLmcfKkBLzQUtOv1xRYLf2Eo5CXkuqDietB5A-uRMHu73xujcGOnj5EtqdWCbjcAjixI9baqkqaLvx-yBPiT64subQGbiW70pRkShNAr8-kRanS-pzWFhPmOLuMIjepyEDOP9qP_AuWmONA8fHxWEOSDRge639RggrOEzs5WO1mbzQUwfZpMVey1a-uTDp-FIUy6axVDgfZpekZacCJa4Ti53j41cPy7j8nSEISJJ_HPXSqt0EwHAW2Cc37pi5WvbX248CcCII7lr571FA1MB6wHgHM0I0EDZqPUdUEbg2CS5OFA40S0Au8ymbvWW7mXOkWX3XiSZ3_uReyeu4oxBSwC-06l5m32CL5nEyz_WcLeJA0fA5GK9Cp0drJ2RhmGFq3KKabfa8I2ZAKlJmVktt-jtEgF5nTNAldBmxF6xeVl-FWT_hrDiZm_3eHFvem_wd_i2_olGV71oTD5eca67ugsfvxmeinsFv-H1Sgvc7TttIDUyhbAdJeB5n8jseY7bohXo_RHoTMq_ow46Gmp0QlI1dFGfEyYTr-MCbdqp_b-2iPvQLwjlcyNcpugxp2t8sPxkxpjlVeznS3Yv6RV-ZtsbvCwaRJAVeHMYAS93S7NZVpy1Q4_yFX17uxdslRioCMce1abcgJ7HsDjjLoRDE6vMeISDKHTT1jQ4DL3k9X5HQvgNBQ-2dGfzN3nNX7BSXIORhDnKECFaG83QcJwD-nf_noi8IOPFlo7_WEJWRocEGDv2B9k0Cf-FrrQZco88f1vEy2LQKk1d1u5kqycxosrRU6QxujQ6ccFFs4DmcVlPBlk9xm2R170fgb87xaCz23FZBxGh7EhXb7pZOsEKLsUJz9fp6aO0KXBKHfEDPo0KPLbuv21OALpubjwNxB4aLC0uda-ARnQPOzEgN7R-NsRszUtlIQht_GRitNSSNMQHrEkwzHVxb-UVoB9oC2gUuUfoVPn7NMc3gfpvrcmALzruTPEThLiJoy305lJ2X3V4to1MNVJEX_CglNNEAlyx29llpc63vd9LzxUGM_CowySQzSA1T44SB1k9YouGcQrac-gQionWPPTz6lA-kknqXYndnFddVQ9nNVf1uw-os4--TYceMnTOvM1NxM9odMYVFfjW_5LjO6UEWhT8fy5owdi8_jwxhF0nTDtYyiAxRoScM7ZYJIL9Fc9NQwl0X7hen3uaSxvQ42jL_ucBySPNIWsouglqhYSXq-Hz0wQ4hcKt_DxhNGz4wOOE52V58Ho1yG3XOpAD_0G00 "C4_Elements")
 
-In addition to this, it is also possible to define a system or component boundary.
+除此之外，还可以定义系统或组件边界。
+看看下面的C4容器图示例：
 
-Take a look a look at the following sample of a C4 Container Diagram:
-
-```csharp
+```js
 @startuml Basic Sample
 !includeurl https://raw.githubusercontent.com/scott-wong/C4-PlantUML/master/C4_Container.puml
 
@@ -72,50 +71,50 @@ Rel(web_app, twitter, "Gets tweets from", "HTTPS")
 
 ![Basic Sample](http://www.plantuml.com/plantuml/png/xLXhRziw4ltkNy7hV6W3E8sJFfhDEaRzK1vOnmaiPRDtsy9Wf74iN9aKIBgkTzl_laD9PcGpMa7sRJvT1aWKSURCcI5r-FWa5HLgFejghqYFHrn8VDWhRRNQRm5CGWR46JZNpj0Rdz_WhzxDu6P4ziwJLaCaLosZa3rMnFIStkKmHNIl_ksGe-DQJVuHifWAEYDeHEUHyk2xwaJX8vi1KyJ7No3oPWj1u_imK5Dot6pcti_ezskGaZw26_u7oD7xPjvBWAyeUuo0_BT6iBc82bmjOpZdJAKUnqcFdDA0Bp0vCg6HXDhFF4n72Bx889AoahqFIKlUQ2ZxRJx0psSvjLeFVCu2AfRjzehV1ei2paqhmWQFTqbBtdQv240KlTSZ2YIWSWg1flcA3EYIprMr8OuuCXvqVh-vyyOTT-p-m_5wbxcK7wZ_nwFGoMOy7CVfzdivYobbmKA4IW4ZIip1dY0wko6T0Qdt-2pqYKkP9DTklPRE5JBXNFzfJT2E-3hCcO2WVKy5mtgUjWvrHvlq15050PeB4eJIdqiPSjOW322GH77o0EGRZS90MzL-0nOyfMZoNUNgtToE-pVtG_IB4r-k59yXhXvZXDsq7pZdtdXqTN7faGWcIhk8y76gSXvO-6uwAqAe-l5cZilNCCOCg6mG64Vq0QBzt8TGFplBtjR9sWoaacH-vO3wGS_8vu79vxJtQt44p6m44TKfosaOLqmKNSShJaUD5UZn6ZrJqhDwVP-iZFCTne-SQlAcB9N2AF2dRATuNzZXOKlYTtow8PJjpndyrzQXxcyV7jRNQe3S9eBF6cZ6SsETqRQx6gH-SD2kxvTYcCHiCDl6eAxLhOkV_EkLW_Qs2Tfzcc7hu40pB8UoUPOO6V0rz27W5_Z0nJR5nAoBi7OlwlCrDJ6sB2vYba7kNkHDulrjYgk5rQfmV_VI5cFp1IiWMXow7C9cM9h6HldkjYdVtQsLuDtknIj2Zeie5jCl1R2vtLKgss2Rikabsafli7lXYh5XeWg85eSkW2XXEAXKlj4svTER6pl7qUxr-p_WA5w55IpEenp39bcUoTCEcbn254Fb0nWw6tL8OFb-fhNauFCq309WN_i7ISUQprs9pzqpFgCIdz4pFeCIdq7canmNVHx3AUaG6IOxHCadQa45FYobWjaRDBaLuOoA9O48zC5FdX9lQXcIa16fiRI7EuzZBXGYvfnkWSSOWB9WqrTcU-jeINpE63v1G1GdgYJC5LF00hIbyo04vcCUpZSGomSUB1jwepyboOY7FesIk8opWwStSKAeWP0o359YVAwIPpvP3nx0DuXuh3D1I8fbsVRmVkkCt9lXk7knEhatJzuTV-oQVkTVdZCQTWPZo_33YVunXkxlhkTSv_gFZZwSTFisa6NujwHLlIieE1xhpuUpTji-l9kJhdrVaPYM6dGtJgGR5R5FpisFRxiVpWjFyl0ToJ4QZL-Ginc5Kl8d7VrJI3wT_Y_2sKoO8gflUn_FUytoEhyWPtksbzTvztkK-ollSZnmBfnXlpRLkY5DYhK87e45wTr1xSSPMMluluT6v4VjHsjZPhGp2vBEqiJ4P5TakofvtccZ4crjcAdeEgWnB08rJfXGafPzwVAAE9dGLzN3X725sv0qmxMRYZ8m_H20zCNpg5_O5xQoA8YmoNViV5SLEEUKnuQsaNTBe2ISYUScereX2_Cvs-GDs6x4hGWstsqhNqv-vygNXDlXsj1Gh7XxI3wdViMNVDll0NkSAOhKX2IBK4r3HjJBxGfz4xnW7-XjxFAssUJz7Pty226Hi36Ymf-62id8nie1MQIu-9JUbXxAD5KY5PrCjjyizd3HwrmDdL5kz_RkxKc___vFshsPEhx88ctIATzR_BKyLr-UqScgS8PhnldNBE962spzDATkMw2gtgkJ_7pDYrWL7aRGToUq8VuskTrbtoHKNVcDQqNnDraKoVuivam_vsNVE9KBVcxTU5s-SC0-YQEv9F5souGXMx1CkBQiwnWvPTz5lAzlRuOeYpdnFddVxPut_oJnDjdj9jvxpQGLABR9eL2nF-9vgd_oonJxByL6ApCEbbKs1NwLhcVmlrhNJHv5kfvrlxok5vF3bfqtQJ0BaK2ze_-6KWcgkC0RyCrDkt-4HYwTQILB--hxwPURMxaMy32cSOoMz_10Ed4SXNwogwpZgzvUWtJSspT3nqCN0UJupH6v_cTFztMYY2yacKiafGLGqwPeCfj7AjGXFPHR1OAeS0OHnf98yMT6yhLAEn4dCyFEsWYYLN9FjEuaI1tlqlDkNRJIHgRt2UO2bCH_GV_Hryzvbq_0Wlai-Xy0 "Basic Sample")
 
-## Supported Diagram Types
+## 支持架构图的类型
 
-* System Context & System Landscape diagrams
+* 系统上下文图(System Context) 和 系统格局图(System Landscape diagrams)
   * Import: `!includeurl https://raw.githubusercontent.com/scott-wong/C4-PlantUML/master/C4_Context.puml`
   * Macros: `Person`, `Person_Ext`, `System`, `System_Ext`, `SystemDb`, `SystemDb_Ext`, `Boundary`, `System_Boundary`, `Enterprise_Boundary`
-* Container diagram
+* 容器图(Container diagram)
   * Import: `!includeurl https://raw.githubusercontent.com/scott-wong/C4-PlantUML/master/C4_Container.puml`
   * Additional Macros: `Container`, `ContainerDb`, `Container_Boundary`
-* Component diagram
+* 组件图(Component diagram)
   * Import: `!includeurl https://raw.githubusercontent.com/scott-wong/C4-PlantUML/master/C4_Component.puml`
   * Additional Macros: `Component`, `ComponentDb`
-* Dynamic diagram
+* 动态图(Dynamic diagram)
   * Import: `!includeurl https://raw.githubusercontent.com/scott-wong/C4-PlantUML/master/C4_Dynamic.puml`
   * Additional Macros: `Interact`, `Interact2`, `GetIndex`, `SetIndex`
-* Deployment diagram
+* 部署图(Deployment diagram)
   * Import: `!includeurl https://raw.githubusercontent.com/scott-wong/C4-PlantUML/master/C4_Deployment.puml`
   * Additional Macros: `Node`
 
-Take a look at each of the [C4 Model Diagram Samples](samples/C4CoreDiagrams.md).
+这里有每个[C4模型图示例](samples/C4CoreDiagrams.md).
 
-## Snippets for Visual Studio Code
+## VSCode代码段
 
-Because the PlantUML support inside of Visual Studio Code is excellent with the [PlantUML extension](https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml), you can also find VS Code snippets for C4-PlantUML at [.vscode/C4.code-snippets](.vscode/C4.code-snippets).
+Visual Studio Code通过[PlantUML扩展](https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml)对PlantUML的支持十分出色，您还可以在以下位置找到C4-PlantUML的VS代码片段[.vscode/C4.code-snippets](.vscode/C4.code-snippets).
 
-Project level snippets are now supported in [VSCode 1.28](https://code.visualstudio.com/updates/v1_28#_project-level-snippets).
-Just include the `C4.code-snippets` file in the `.vscode` folder of your project.
+[VSCode 1.28](https://code.visualstudio.com/updates/v1_28#_project-level-snippets)已经支持项目级别的代码片段。  
+仅需在项目`.vscode` 目录引入 `C4.code-snippets`文件即可。
 
-It is possible to save them directly inside VS Code: [Creating your own snippets](https://code.visualstudio.com/docs/editor/userdefinedsnippets#_creating-your-own-snippets).
+可以将它们直接保存在VS Code中: [创建你自己的代码片段](https://code.visualstudio.com/docs/editor/userdefinedsnippets#_creating-your-own-snippets).
 
 ![C4-PlantUML Snippets Video](images/vscode_c4plantuml_snippets.gif)
 
-## Layout Options
+## 布局选项
 
-C4-PlantUML also comes with some layout options to make it easy and reusable to create nice and useful diagrams:
+C4-PlantUML还带有一些布局选项，使创建美观实用的图表变得容易且可重复使用:
 
-* [LAYOUT_TOP_DOWN or LAYOUT_LEFT_RIGHT](LayoutOptions.md#layout_top_down-or-layout_left_right)
-* [LAYOUT_WITH_LEGEND()](LayoutOptions.md#layout_with_legend)
-* [LAYOUT_AS_SKETCH()](LayoutOptions.md#layout_as_sketch)
+* 上下或左右布局[LAYOUT_TOP_DOWN or LAYOUT_LEFT_RIGHT](LayoutOptions.md#layout_top_down-or-layout_left_right)
+* 展示图例[LAYOUT_WITH_LEGEND()](LayoutOptions.md#layout_with_legend)
+* 手稿模式[LAYOUT_AS_SKETCH()](LayoutOptions.md#layout_as_sketch)
 
-## Advanced Samples
+## 更多样例
 
-The following advanced samples are reproductions with C4-PlantUML from official [C4 model samples](https://c4model.com/#examples) created by [Simon Brown](http://simonbrown.je/).
+以下进阶样例是基于[Simon Brown](http://simonbrown.je/)创建的官方[C4模型样例](https://c4model.com/#examples)使用C4-PlantUML重新绘制的。
 
-The core diagram samples from [c4model.com](https://c4model.com/#coreDiagrams) are available [here](samples/C4CoreDiagrams.md).
+[c4model.com](https://c4model.com/#coreDiagrams)的核心图示例可在[此处](samples/C4CoreDiagrams.md)获得。
 
 ### techtribes.js
 
@@ -123,41 +122,41 @@ Source: [C4_Container Diagram Sample - techtribesjs.puml](samples/C4_Container%2
 
 ![techtribesjs](http://www.plantuml.com/plantuml/png/pLLjRzis4FxkNt78lco04x-uYRCYDUeNk5sn3btihX_Q8g34iyIM8ZMIgkEk_U-ZICKJBGjRaHOT3KWGUVVSSm_lpe-r8SeK6U_ezqpaH94CA6v8mSqQRysKiqHaA0p4ze6gPhLL97_5g4bXsE_NzZDo-nor9Wcks4U4mNdzK65iY4WumbyTi6jbCL6QNOvBAOnt6BeJdH8gjqmai25SO-TpdI0n92BwVY1JfUIsGfXBBXNySE6MsocHchjr_C_7qhgwYcGXA56xoUIENSYXZN6_4U20nWEttEvCAeggRNzbTXo14fqYRMEPez9IU8uDFXNmqgs0HhWx8_7xH9NvLcVzomV3yQn9iJyUpIwMRLnicQ4IXDzy6r8Nb-MlIUfoMlxQIEcTDfXzRIw3mSNbRD7aCfgFb_F-lmhqRKZzx5QxGCt6-zxwX5J-9_A4TnPRSC84ggzDvy7eSh4u_nA9lYiR8tCm4Y9fZBICM2aHawAJCegWzoGw71CK51HBKjFvz0Y2PR_NrWW-TJvTLKDcKfs07nh-oBVw_kYkC08RNs8JP-0Bnk_xQsxu1ZO-M--xbzGUMUQUVsTV0N3owD5KIB7BPA7XfKPr0iT67T50xink2cjs094a2XDYaEun0jVzyJ5VcZ71j56aLFouVs1o1CDWd1h58jHdxpIyNZantfv0y3zdWUA1Bolt211UOGJJFESiTZ7UY5xlIhEF-70mdBn-HZwGBgnonKG2p_-OTs4jCsi8uxFRjrUzqcxIwxsnNZ3bN6urb1HrML4V66uXHvbpx8Ads7MNWi9q0J_Obzru9oFxH1EVmKR934oAm6LCE9IPTO6oX1dxHGI5NzQWBNDfLGexXcZOOdH3yjobLxMLo-uQkKlBGYogxJ33vxlLxx_2-Tbv8w6LZOIwaO9xGuPPX4gdBBSxXB_NXob5X2Qb-HDcdXOHACnbbUWHzWhv3OsQTxDazktlD6IzdAv7m-DyDH8Lfy04nLlKHu9jBAXlcePQlqahXXFAenr89KKY5pCOdWrRnF9tUBrQzQRbDDaWKWq_HbmcODCt-YTtZsQBQ8un4rB_oPiglCmjHrJDoeGnpANGacDPmGUCl9U6N4cNSRUA6rw98rHL9KW117IS8YquKh2gi6Cq2y_73i-0vdhBZ3aO8rvdxsRyUUZakRJw9CoaHHIwpAoSkjKZAayxuSY2qzF9NOV0GujXDTMeGq6VhjSlLlzeUDAfpQvxW0G3x1v0bODpzkrI-LuZeRxmt5rk5IjltSWGpzPrxzbYDk-wGeJHg7_HWbxhZqQ4mD2NQyFcUCzicSAo58sC9Iz9A0F3SNymhhEe2WjENxxuJrcwtltIL8CWpMHVtUaNMeRPjcj-_znjgAfJgc1FqEox69ZOI9MvOghD4aUbjO2Q0NnRrV13t4WM1l8YuYo6M5Bqeu8PgHX-QIpVaBLG-sbJQ2QISbYwHFO3ior07RygZTFNAQCKnTlhq_fKVuo25Xd_6m00 "techtribesjs")
 
-### Container Diagram - Message Bus and Microservices
+### 容器图 - 消息总线和微服务
 
 Source: [C4_Container Diagram Sample - message bus.puml](samples/C4_Container%20Diagram%20Sample%20-%20message%20bus.puml)
 
 ![Container Diagram - messagebus](http://www.plantuml.com/plantuml/png/pPPjRzis4CVV-rCStBVnx3mqoOh4gEqaQukc3v67laY3W18l4X6P94ZAgRVqku-K55aofMx6MY0qOC2yq_z-l3iVzLeReaosI7lwdd5955a0nJkIfMQEtymaPJ5V83SGsIzKDQy7HUGNHaq2UwDHRNz1lbsYrYJ6WFs5iFkoRbGO6SBZ5E7l7jWLM4qKPYNnGd1JFB2NMtH2g7XWF8OxachiVQy34aD2el-Vo4GfyL0gp4Gg5Bmup5U-uvJytRh-zxPZdPo48kEKgDLu_4JNPEWY7da1DZ0EyfNlJeMYgBhs0xDA4IZH2T8kIebA2rumUZoby4M-AWn_TqgY-rYvyvQsqV71tj7KHnmTxKyFBxfOR9kXuYIz_JLGXyVkuqCTJzod2qgljC75psRPtJqydfxvBFkpeulPw5yJz6kWVizNTuByFzvpo4-9ydpIqwnPPCK9uwX-Dix1_l7PsSjjKlGCQBQuBvpH20b6G2YC4VOOpEML2TvB64NG5NalnHWv1SNYnFGUJw6nxE-vTOB7tkD9EPd6fGMAILEOYlbGcPwwgU5JzEKuToYwhDWlUiDxjk5JfAXujgg3DLdoWh-tlXJxfwUpJDj3e_hAltAOG5J-x4DjQ1DTxRS_36_vdL0Buh86rq5ESzE7nktaH7RBRcWNcKYPiiY9M9RXy4JR-hpQtHjVloDBeYF5fDc12O-pbAYRaw4pZuV30ZnDnSEQKhjoBWWdCO99a2cGIjon5FlGR4uBHQJy0LE0QiaYz7bs893AtR9J8Sm6pJn1a89n0-8EI1IXrc3pK-41MwVB9whSRdKHtCSh6nYccMwINP4mPERoyoQG8bnBeKoE4MQQSSU4I-H6jn0i2lrRw-a7lqAdP8_UdfohB5njX9yf90OrS7Veb6ca-Qp8OLIb9ZCbXSOsdigfEoMJZ3BJJZHxCVpjm_by0-gJ4aj6BPLGCU5CvzKOFDWj84whU8EAMCeCQuCgl1f0vG1iTj1PkTba-gX8bBhNhcW3Ap12eTwwLMZe4LHrwa2uN0MVtxT79sMfh8N24fMsqVDUJjDrzrGb91GI4MrRIHfs5j51D5dFbyXBGpjnBKr0Gf6Pihd19CH0GfPelwH4ZhIxb4xAtY5LxWS3QvKINZcsqpyrwYRLc_dyKx3cwVUSy-3gxHzlveEnzpT-af6Kc8uAWyjjt0n2z8f7E_0k-FXXw0NqOWpUdr_C6zW1SgghR8Yc-1SC0n7Te_cnQ7ca-bneg5TdoVB3hQErYTLJGyDIfoXZqLDiS_oVJMTrlZg5LVEdmtzayuIADjXIn8_UPEeuOh_NY5QFx_oQpvJX66yDTvqmIf7VN0qsPj9hovujqdy0 "Container Diagram - messagebus")
 
-### Dynamic Diagram - Message Bus and Microservices
+### 动态图 - 消息总线和微服务
 
 Source: [C4_Dynamic Diagram Sample - message bus.puml](samples/C4_Dynamic%20Diagram%20Sample%20-%20message%20bus.puml)
 
 ![Dynamic diagram - messagebus](http://www.plantuml.com/plantuml/png/nLdlR-Eu4VtklsBYCv0ObpYNeFsImmANnC7jNhr9pZzmw2U3biOsKObaIIfUj-Z_tg5eCOgTRIa7PmTOBpMQUM_U6ygGmL-CPTeMUTOwuIB9YXGBdS7IMcLkBYyrM_KMt2wBMM5G9r9O5BQNoFnoo1EcK_d8KM5sUV-NY-UC2JlvEhZCcR6eAJIzbxcImbKeHt0AXQ3Id09WbmXpcMLonSK2CYuGc4ZXpMsk3Qqa43LaCc5PjYQCgatO9Q2xeqGgl84lrAXcYULI6E22i05TI6bky1oCdDiLqmXcJRtc83KuROpQq3r2UTOyPtfTjcGAfQIshatCq7LdRg1FgaLgG8gorPIpXMOv6CSE5q0GxYzGkfX2gJAlSelUWCQCMKoTM8Ahrt7XGIl8hLB2DHWkolbyis_aLBsPymeYtDeK9vM9LQfpm1aeKcg95Ib7aP2dOqoMWjCOIWr2YWiR8bxSERLhUEf5oiAMQpalDON6Ktp1J2e_PdHiHDTV2vRp91Z9XTKoBH8qSCOAAtDcURa1kY2AV8QQEkEr6TzKugh1dtLle32K5Qg1wfF2-yn9shVpxPfhAlAtA5V0306_gOmdd9p1EJcMdcygHcY_k3nNOD1lLq7ERm7_MajR-3IVKHhqHXV54utCR1AS9sKf_V_3__rhjKxcXIYTW0u1JSywBomhQ1uTOr5zkkgs04uqsa8ByBVWHt-lTK9Zhee9frFIVxggGmQr7O6hQPdW0AlSr-WsM408HdISw6cbTTDOHsOfV08FLmVsKZQUlYsjAtBrMzIdOQXn1fxu0TUs0axdMkRdW5ChtMV6PfYvXTSFGyosSjgRUpTLThlR1BTyc1eIXBfkQvTgUiUIVyJe28dnOg8OWg8OgdXPZyWNovdKKT92ShoyUAOWiHbb_FIQQTsks6-UyQeRaiTBxqV9xUybiTzCLZzUohjiSYNYn51Yl9veXY0fXYf-G9CeJPEz14sQgPbyR40J5IT5xQT5DHIZFZYOGPIQmLvY1isq33usc07ERPmOIepN4yqG9CLGnGze6ALfk9UWOJCrmuyDQCWNoxW9XSp6Ya9blAfG4Z-aGlopa1PJ2E-huLT4fmBgUAJE1g0BhVhlXlOchqrSPQPV1BAER_0xxxRTDo-lU_NZ0qvGiyv2MSCU_rUJ_XqlpZcVUoZxF5jJ3ttLCOmChrEHPeRyGnaQ61kR6YgFjaCRk-kA3cPnHA_nc_UuPlTZ3UuVpjH-SoFx7p1l_pxbIaJRHxa7T93Ocflegewo2IUnBauEP-6akN-JOsp2YOesJntGFRM7VUeecsyGwz_WSFODchitECRcSx-veksZt0CwI6pDJNHLHzc4mrWNXuUpSDZSl-4nDg7_KHdhdqi-e8UEhhcFhkpFsuY3sxy_JSRJyTFpjF_qnsFh53QHsz5qzBU7yVtdiswLzCUNyUVfuE7NXyS-1LlFg8qKPqbXhCnHdyDzMBLleGgtkwrHUUWvlPE5I9bUdoLNb54bazAvr3bpxRIxy6_g6-2-ElayOqhLas-LE-VpoHJ_ZRqmasYkx3dSYaMHCUt2j-wuseGM35W9EHDiWM2No3KeBUSymtPtYwsgc1hKBpp1ElN8XohQSnWfxSwQxwIqBZXU8YZ9XGKv1vOaQ0oGij05y9hGRUASigczwQmm1FNLNy5TOHpoaCrct7xzlMJHJ1WbjIsnAPqBHuGlAApPWTMuEH6l2HfMiRgYOJ5RjvrQZSoY0U4wpRZ1559cMKaMm40LMac3ktpk3DhMk6xTTPtd_eVBtkF3s2sVjNpXAN59lM22czAOYnM5mC6KH7EMy8oMkrJzsUkmqbbzJdtgTyPCIVUaMP8XN5qdxcfafKOJDH223t8TVjssEi7NzUZtGGsRLSxzYvnxGMq8kzmFMHQ6zUeeIs4famR6Ef9WQqdfk1ze-E4oj59J1smc2xlP962NpCAIlI1zA8K2KwBx3nt56fuhSalg53Mik5s-dirMYzhJxf_CYKhB3RFafdggmEbSk4u-ZyVF8m8FrMNDzaCMKDuVpIlSRwEdnyiTp5susiO8TdZJkIXn-dVtX4225IPypfFt95___7eO_bEtrqkMJ2pSrhGIohFjt9dkZ-WfzDFFqExrUlJFimDtbU1LjBQ_pNTxVli5C4AHrjmeIdl2_AGJmSnQ96vHw_BYYcITXW1rNMlrnwjQ6nErqqCrKTfqSwxpYlHxRDsBQ-TXW7px5RRxnREdg59JZUKTu11wVzxRMArJy7DVkwSLLtvIhL6LzTVkzqJvX_33WgxV2De2hJteGKi5MLSJ1l0BDL7asNy1 "Dynamic diagram - messagebus")
 
-### Deployment Diagram
+### 部署图
 
 Source: [C4_Deployment Diagram Sample - bigbankplc.puml](samples/C4_Deployment%20Diagram%20Sample%20-%20bigbankplc.puml)
 
 ![Deployment diagram for Internet Banking System - Live](http://www.plantuml.com/plantuml/png/pLTjKniv4lxkNz7nVjYGCY_OZi4vGXqOah05c6ASoxtSrPH6wh5LQ4PJaWR2tkQ_NsiqiyE4f80iLxLJjHkvkzNzT3-jbdWXSwvAWQLHi7Aki6ysDmsxsLXAjogJqgBXEdUOkmskiyrBoPaH-bnYWMfpDbw_K2nt7yzEDpDc7HeInJET5JhtEueoKxsVeSnfQqO2S2k4L2kbRsI-12Lp19OBwAYbiRJIGA51QSwKkYKV3Kou7u2q4TS5le43iEHN8LYTkXjcQ75BgB8DChamCcFc5b2XZsNVm14MIjzMWNCjqDPGSiS8bx5mGnMGEO6wvmz8R7r8x_Z4LqUW05OAYJad70lagrmIT2XG5mh9taeHSjMbgzOwxNeMU8rA5w4EoBA_GCYO4cgDcE4hwP0xEsWse0d0_OevgNExQSkYqCQ1TInDDtnzPbffOsdnquDVxuN0r1DpFZywZj_DpnVnR7uwlmJwVXfNNzVay7rhG2RlggyYnTqgGl-ug3rx9VE26PQ1eVoOft5lp_Eolm__xG54AoP2swHCMVGIXmQrkotm7P4MoLyHjaZiVrJvVfq1wGuPlreQNUQYjQ04Mhqs0atGDSb-yRcSibiYxf6frELHci2U7lnZ_d4HVpfPV8XFZzyVdn_rLfv--pludi8b4e56BbUkzzjR-CP7qWMPtXFtVjlhfB1Voq5qUxirdr4v3axEZo_RFHtpzW2GES4Au7elw7zjLhuYv-JsSHr5HisK0A7H4Y87JO-oqkcCESd3D4WCiYiBEcrn342cWB7pPmgaXMkaK-nH-5E5ndKs-ZCB5B2_jscf8VR_dU_vVzyiZcSVpaClH2V_FDxljprCURp4c2d9x83YA9QW6ZG1rzfkXFxRjxNwUrx_LU_wJnsz3x-tCBDG1-drd7GAgxbXSdJKbFcLx-iep9RrEuEfrxlVFo_NUhqAT6iMnwVo6kFuK2wziqBnE1wbkzjfCXn0dwHL321v_wlV89XZmD5ZwQzL1-qHlXEvJ6XzWychLw_YU3XAjv1nSbqhreC6NduUh_c87vCoToLiJpQsnd2wYEf8FnBhe61yXGkTSKRcR3pU6LE088KWxdyjWDsDpqr8-cPDPxriAAWP20J4yITC3ef2ILxDqo4bE9wEX9YINrB17PqFzGkxPjK4ZWhZQJpxsyoBZr1HBiQ6AU-g5gzlKc_jnMqB9050StqLR8d0sZ0R_RKA-vSU_VSaYbWX0qLZvAydh-zGH9f0qUxpKDJ6wb8qsfsce-dqsKawk3ZfahITx8p44CalgHv9qeNHrrAWlSz4MkRSRsPAkbkubhGRVedcvviV5ekB22Z4ZvCYagrjmilvD7rzbn8lVoOkGeYvOLnX_VAX9jXDTwRfX2841Qn3hUktikqX_nODHydtY3XYZYNCegSW7GvtKdyW6w5tV8cAXL928uQ8YC-OrqPE6xJW7vfWS2cjCvKro3pL9glM0rWnkwgUM6v5YTV40ZSe_4-cx00OvsWjABsa7-Zu7-B77tfa-7eowV8pV3v-XWq_4NATYy3GM6oF1DvbA6YVYQCHdSVXTCBPvC_8qPVltMkpqZgTeVdPSfqL9QL8fUAZIOA2qBLQQDGUz9daHlkNCtoIkT0t5hIfnWB20u-3ZF5vG-eJ4D7TS6WeZbzlxuwsTjAT-iQenHxLUwtzX9-j36qVm9d-LIh57aBqJXfCzUT1ZJzYAJEIydbeNrk3Ox74aD9ZXcj4QneSR8bVNOH3pYV3XF885klUv5kpDk965k6YEyYNfMAcCswPKlKVG0zDNgU1rxMsVWpxFTB03IQGXAfI3pssUpATI8K2hoL7VpEnhPsjfDj1mGI2ZSSSAYxdKTK-kJ1QYb38XyjuLZaZ3txS9ybqUyh9Ov02YRt_lxECkCoxvG4bC-bGW2qJY-uFrQgR4bMBAaN7_UdtwbFc_oKoOI6b9gzwuCPGDfO0LlrnT3WZ5C-FeJlVdexXOUwU_XOvOrSKb0o0CwMQyErB8e3uuNFu_m8KVooU_Zh-iIGwRsLTzJblp-ETWruZEyNKFSSZw7dkwKiCAQ4DVqevJJ3_YhaeC_K_ "Deployment diagram for Internet Banking System - Live")
 
-## Background
+## 背景
 
-[PlantUML](http://en.plantuml.com/) is an open source project that allows you to create UML diagrams.
-Diagrams are defined using a simple and intuitive language.
-Images can be generated in PNG, in SVG or in LaTeX format.
+[PlantUML](https://plantuml.com/zh/) 是创建UML图的开源项目。
+使用简单直观的语言定义图。
+图像可以生成PNG，SVG或LaTeX格式。
 
-PlantUML was created to allow the drawing of UML diagrams, using a simple and human readable text description.
-Because it does not prevent you from drawing inconsistent diagrams, it is a drawing tool and not a modeling tool.
-It is the most used text-based diagram drawing tool with [extensive support into wikis and forums, text editors and IDEs, use by different programming languages and documentation generators](http://en.plantuml.com/running).
+创建PlantUML的目的是使用简单易读的文本描述绘制UML图。
+因为它不会阻止您绘制不一致的图，所以它是一种绘图工具，而不是建模工具。
+它是最常用的基于文本的图绘制工具，它具有[对Wiki和论坛，文本编辑器和IDE的广泛支持，供不同的编程语言和文档生成器使用](https://plantuml.com/zh/running)。
 
-The [C4 model](https://c4model.com/) for software architecture is an "abstraction-first" approach to diagramming, based upon abstractions that reflect how software architects and developers think about and build software.
-The small set of abstractions and diagram types makes the C4 model easy to learn and use.
-C4 stands for context, containers, components, and code — a set of hierarchical diagrams that you can use to describe your software architecture at different zoom levels, each useful for different audiences.
+用于软件架构的[C4模型]（https://c4model.com/）是一种“抽象性”的图表绘制方法，它抽象自软件架构师和开发人员如何思考和构建软件的。
+少量的抽象和图表类型使C4模型易于学习和使用。
+C4模型指context, containers, components, code-一组层次结构图，您可以用它们在不同的缩放级别上描述您的软件架构，每个层次结构对不同的受众有用。
 
-The C4 model was created as a way to help software development teams describe and communicate software architecture, both during up-front design sessions and when retrospectively documenting an existing codebase.
+创建C4模型是为了帮助软件开发团队在前期设计会议期间以及回顾性地记录现有代码库时描述和交流软件架构。
 
-More information can be found here:
+更多信息:
 
 * [The C4 model for software architecture](https://c4model.com/)
 * [REAL WORLD PlantUML - Sample Gallery](https://real-world-plantuml.com/)
