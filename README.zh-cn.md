@@ -30,7 +30,7 @@ C4-PlantUML包含用于使用PlantUML创建C4模型图的宏，构造型和其�
 如果你想始终使用最新版请按如下方式引入：
 
 ```js
-!includeurl https://raw.githubusercontent.com/scott-wong/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/scott-wong/C4-PlantUML/master/C4_Container.puml
 ```
 
 现在创建一个C4模型图:
@@ -39,7 +39,7 @@ C4-PlantUML包含用于使用PlantUML创建C4模型图的宏，构造型和其�
 
 ```js
 @startuml C4_Elements
-!includeurl https://raw.githubusercontent.com/scott-wong/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/scott-wong/C4-PlantUML/master/C4_Container.puml
 
 Person(personAlias, "Label", "Optional Description")
 Container(containerAlias, "Label", "Technology", "Optional Description")
@@ -56,7 +56,7 @@ Rel(personAlias, containerAlias, "Label", "Optional Technology")
 
 ```js
 @startuml Basic Sample
-!includeurl https://raw.githubusercontent.com/scott-wong/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/scott-wong/C4-PlantUML/master/C4_Container.puml
 
 Person(admin, "Administrator")
 System_Boundary(c1, "Sample System") {
@@ -74,19 +74,19 @@ Rel(web_app, twitter, "Gets tweets from", "HTTPS")
 ## 支持架构图的类型
 
 * 系统上下文图(System Context) 和 系统格局图(System Landscape diagrams)
-  * Import: `!includeurl https://raw.githubusercontent.com/scott-wong/C4-PlantUML/master/C4_Context.puml`
+  * Import: `!include https://raw.githubusercontent.com/scott-wong/C4-PlantUML/master/C4_Context.puml`
   * Macros: `Person`, `Person_Ext`, `System`, `System_Ext`, `SystemDb`, `SystemDb_Ext`, `Boundary`, `System_Boundary`, `Enterprise_Boundary`
 * 容器图(Container diagram)
-  * Import: `!includeurl https://raw.githubusercontent.com/scott-wong/C4-PlantUML/master/C4_Container.puml`
+  * Import: `!include https://raw.githubusercontent.com/scott-wong/C4-PlantUML/master/C4_Container.puml`
   * Additional Macros: `Container`, `ContainerDb`, `Container_Boundary`
 * 组件图(Component diagram)
-  * Import: `!includeurl https://raw.githubusercontent.com/scott-wong/C4-PlantUML/master/C4_Component.puml`
+  * Import: `!include https://raw.githubusercontent.com/scott-wong/C4-PlantUML/master/C4_Component.puml`
   * Additional Macros: `Component`, `ComponentDb`
 * 动态图(Dynamic diagram)
-  * Import: `!includeurl https://raw.githubusercontent.com/scott-wong/C4-PlantUML/master/C4_Dynamic.puml`
+  * Import: `!include https://raw.githubusercontent.com/scott-wong/C4-PlantUML/master/C4_Dynamic.puml`
   * Additional Macros: `Interact`, `Interact2`, `GetIndex`, `SetIndex`
 * 部署图(Deployment diagram)
-  * Import: `!includeurl https://raw.githubusercontent.com/scott-wong/C4-PlantUML/master/C4_Deployment.puml`
+  * Import: `!include https://raw.githubusercontent.com/scott-wong/C4-PlantUML/master/C4_Deployment.puml`
   * Additional Macros: `Node`
 
 这里有每个[C4模型图示例](samples/C4CoreDiagrams.md).
