@@ -1,4 +1,4 @@
-!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/master/C4_Component.puml
+!include https://raw.githubusercontent.com/scott-wong/C4-PlantUML/master/C4_Component.puml
 ' uncomment the following line and comment the first to use locally
 ' !include C4_Component.puml
 
@@ -8,8 +8,12 @@
 
 ' Colors
 ' ##################################
-!define NODE_FONT_COLOR    #444444
-!define NODE_BG_COLOR      #FFFFFF
+!procedure NODE_FONT_COLOR()
+#444444
+!endprocedure
+!procedure NODE_BG_COLOR()
+#FFFFFF
+!endprocedure
 
 ' Styling
 ' ##################################
@@ -17,25 +21,28 @@
 skinparam rectangle<<node>> {
   Shadowing false
   StereotypeFontSize 0
-  FontColor NODE_FONT_COLOR
-  BackgroundColor NODE_BG_COLOR
+  FontColor NODE_FONT_COLOR()
+  BackgroundColor NODE_BG_COLOR()
   BorderColor #444444
 }
 
 ' Layout
 ' ##################################
 
-!definelong LAYOUT_WITH_LEGEND
-hide stereotype
-legend right
-|=                    |= Type                |
-|<NODE_BG_COLOR>      | deployment node      |
-|<CONTAINER_BG_COLOR> | deployment container |
-endlegend
-!enddefinelong
+!procedure LAYOUT_WITH_LEGEND()
+  hide stereotype
+  legend right
+    |=                    |= Type                |
+    |<NODE_BG_COLOR>      | deployment node      |
+    |<CONTAINER_BG_COLOR> | deployment container |
+  endlegend
+!endprocedure
 
 ' Nodes
 ' ##################################
 ' PlantUML does not support automatic line breaks of container, if e_techn is very long insert line breaks with 
 ' "</size>\n<size:TECHN_FONT_SIZE>"
-!define Node(e_alias, e_label, e_techn) rectangle "==e_label\n<size:TECHN_FONT_SIZE>[e_techn]</size>" <<node>> as e_alias
+!unquoted procedure Node(e_alias, e_label, e_techn)
+  ' rectangle "==e_label\n<size:$TECHN_FONT_SIZE>[e_techn]</size>" <<node>> as e_alias
+  rectangle "==e_label\n//<size:$TECHN_FONT_SIZE>[e_techn]</size>//" <<node>> as e_alias
+!endprocedure
