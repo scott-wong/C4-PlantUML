@@ -24,9 +24,9 @@
 
 !$index=1
 
-!function SetIndex($new_index)
+!procedure SetIndex($new_index)
   !$index=$new_index
-!endfunction
+!endprocedure
 
 !function GetIndex($auto_increase=1)
   !$old = $index
@@ -68,106 +68,106 @@
 !define Interact2_Right(e_index, e_from, e_to, e_label) Rel_Right(e_from, e_to, "e_index: e_label")
 !define Interact2_Right(e_index, e_from, e_to, e_label, e_techn) Rel_Right(e_from, e_to, "e_index: e_label", e_techn)
 
-!unquoted function Interact($e_from, $e_to, $e_label) 
+!unquoted procedure Interact($e_from, $e_to, $e_label) 
   Interact2($index, "$e_from", "$e_to", "$e_label")
   !$index=$inc_($index)
-!endfunction
-!unquoted function Interact($e_from, $e_to, $e_label, $e_techn) 
+!endprocedure
+!unquoted procedure Interact($e_from, $e_to, $e_label, $e_techn) 
   Interact2($index, "$e_from", "$e_to", "$e_label", $e_techn)
   !$index=$inc_($index)
-!endfunction
+!endprocedure
 
-!unquoted function Interact_Back($e_from, $e_to, $e_label) 
+!unquoted procedure Interact_Back($e_from, $e_to, $e_label) 
   Interact2_Back($index, "$e_from", "$e_to", "$e_label")
   !$index=$inc_($index)
-!endfunction
-!unquoted function Interact_Back($e_from, $e_to, $e_label, $e_techn) 
+!endprocedure
+!unquoted procedure Interact_Back($e_from, $e_to, $e_label, $e_techn) 
   Interact2_Back($index, "$e_from", "$e_to", "$e_label", $e_techn)
   !$index=$inc_($index)
-!endfunction
+!endprocedure
 
-!unquoted function Interact_Neighbor($e_from, $e_to, $e_label) 
+!unquoted procedure Interact_Neighbor($e_from, $e_to, $e_label) 
   Interact2_Neighbor($index, "$e_from", "$e_to", "$e_label")
   !$index=$inc_($index)
-!endfunction
-!unquoted function Interact_Neighbor($e_from, $e_to, $e_label, $e_techn) 
+!endprocedure
+!unquoted procedure Interact_Neighbor($e_from, $e_to, $e_label, $e_techn) 
   Interact2_Neighbor($index, "$e_from", "$e_to", "$e_label", $e_techn)
   !$index=$inc_($index)
-!endfunction
+!endprocedure
 
-!unquoted function Interact_Back_Neighbor($e_from, $e_to, $e_label) 
+!unquoted procedure Interact_Back_Neighbor($e_from, $e_to, $e_label) 
   Interact2_Back_Neighbor($index, "$e_from", "$e_to", "$e_label")
   !$index=$inc_($index)
-!endfunction
-!unquoted function Interact_Back_Neighbor($e_from, $e_to, $e_label, $e_techn) 
+!endprocedure
+!unquoted procedure Interact_Back_Neighbor($e_from, $e_to, $e_label, $e_techn) 
   Interact2_Back_Neighbor($index, "$e_from", "$e_to", "$e_label", $e_techn)
   !$index=$inc_($index)
-!endfunction
+!endprocedure
 
-!unquoted function Interact_D($e_from, $e_to, $e_label) 
+!unquoted procedure Interact_D($e_from, $e_to, $e_label) 
   Interact2_D($index, "$e_from", "$e_to", "$e_label")
   !$index=$inc_($index)
-!endfunction
-!unquoted function Interact_D($e_from, $e_to, $e_label, $e_techn) 
+!endprocedure
+!unquoted procedure Interact_D($e_from, $e_to, $e_label, $e_techn) 
   Interact2_D($index, "$e_from", "$e_to", "$e_label", $e_techn)
   !$index=$inc_($index)
-!endfunction
-!unquoted function Interact_Down($e_from, $e_to, $e_label) 
+!endprocedure
+!unquoted procedure Interact_Down($e_from, $e_to, $e_label) 
   Interact2_Down($index, "$e_from", "$e_to", "$e_label")
   !$index=$inc_($index)
-!endfunction
-!unquoted function Interact_Down($e_from, $e_to, $e_label, $e_techn) 
+!endprocedure
+!unquoted procedure Interact_Down($e_from, $e_to, $e_label, $e_techn) 
   Interact2_Down($index, "$e_from", "$e_to", "$e_label", $e_techn)
   !$index=$inc_($index)
-!endfunction
+!endprocedure
 
-!unquoted function Interact_U($e_from, $e_to, $e_label) 
+!unquoted procedure Interact_U($e_from, $e_to, $e_label) 
   Interact2_U($index, "$e_from", "$e_to", "$e_label")
   !$index=$inc_($index)
-!endfunction
-!unquoted function Interact_U($e_from, $e_to, $e_label, $e_techn) 
+!endprocedure
+!unquoted procedure Interact_U($e_from, $e_to, $e_label, $e_techn) 
   Interact2_U($index, "$e_from", "$e_to", "$e_label", $e_techn)
   !$index=$inc_($index)
-!endfunction
-!unquoted function Interact_Up($e_from, $e_to, $e_label) 
+!endprocedure
+!unquoted procedure Interact_Up($e_from, $e_to, $e_label) 
   Interact2_Up($index, "$e_from", "$e_to", "$e_label")
   !$index=$inc_($index)
-!endfunction
-!unquoted function Interact_Up($e_from, $e_to, $e_label, $e_techn) 
+!endprocedure
+!unquoted procedure Interact_Up($e_from, $e_to, $e_label, $e_techn) 
   Interact2_Up($index, "$e_from", "$e_to", "$e_label", $e_techn)
   !$index=$inc_($index)
-!endfunction
+!endprocedure
 
-!unquoted function Interact_L($e_from, $e_to, $e_label) 
+!unquoted procedure Interact_L($e_from, $e_to, $e_label) 
   Interact2_L($index, "$e_from", "$e_to", "$e_label")
   !$index=$inc_($index)
-!endfunction
-!unquoted function Interact_L($e_from, $e_to, $e_label, $e_techn) 
+!endprocedure
+!unquoted procedure Interact_L($e_from, $e_to, $e_label, $e_techn) 
   Interact2_L($index, "$e_from", "$e_to", "$e_label", $e_techn)
   !$index=$inc_($index)
-!endfunction
-!unquoted function Interact_Left($e_from, $e_to, $e_label) 
+!endprocedure
+!unquoted procedure Interact_Left($e_from, $e_to, $e_label) 
   Interact2_Left($index, "$e_from", "$e_to", "$e_label")
   !$index=$inc_($index)
-!endfunction
-!unquoted function Interact_Left($e_from, $e_to, $e_label, $e_techn) 
+!endprocedure
+!unquoted procedure Interact_Left($e_from, $e_to, $e_label, $e_techn) 
   Interact2_Left($index, "$e_from", "$e_to", "$e_label", $e_techn)
   !$index=$inc_($index)
-!endfunction
+!endprocedure
 
-!unquoted function Interact_R($e_from, $e_to, $e_label) 
+!unquoted procedure Interact_R($e_from, $e_to, $e_label) 
   Interact2_R($index, "$e_from", "$e_to", "$e_label")
   !$index=$inc_($index)
-!endfunction
-!unquoted function Interact_R($e_from, $e_to, $e_label, $e_techn) 
+!endprocedure
+!unquoted procedure Interact_R($e_from, $e_to, $e_label, $e_techn) 
   Interact2_R($index, "$e_from", "$e_to", "$e_label", $e_techn)
   !$index=$inc_($index)
-!endfunction
-!unquoted function Interact_Right($e_from, $e_to, $e_label) 
+!endprocedure
+!unquoted procedure Interact_Right($e_from, $e_to, $e_label) 
   Interact2_Right($index, "$e_from", "$e_to", "$e_label")
   !$index=$inc_($index)
-!endfunction
-!unquoted function Interact_Right($e_from, $e_to, $e_label, $e_techn) 
+!endprocedure
+!unquoted procedure Interact_Right($e_from, $e_to, $e_label, $e_techn) 
   Interact2_Right($index, "$e_from", "$e_to", "$e_label", $e_techn)
   !$index=$inc_($index)
-!endfunction
+!endprocedure

@@ -79,7 +79,7 @@ Rel(web_app, twitter, "Gets tweets from", "HTTPS")
   * Macros: `Person`, `Person_Ext`, `System`, `System_Ext`, `SystemDb`, `SystemDb_Ext`, `Boundary`, `System_Boundary`, `Enterprise_Boundary`
 * Container diagram
   * Import: `!include https://raw.githubusercontent.com/scott-wong/C4-PlantUML/master/C4_Container.puml`
-  * Additional Macros: `Container`, `ContainerDb`, `Container_Boundary`
+  * Additional Macros: `Container`, `ContainerDb`, `Container_Boundary`, `Container_Ext`, `ContainerDb_Ext`
 * Component diagram
   * Import: `!include https://raw.githubusercontent.com/scott-wong/C4-PlantUML/master/C4_Component.puml`
   * Additional Macros: `Component`, `ComponentDb`
