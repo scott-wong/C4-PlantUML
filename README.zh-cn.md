@@ -5,7 +5,7 @@
 
 C4-PlantUML结合[PlantUML](http://en.plantuml.com/)和[C4 model](https://c4model.com/)的优势提供一种描述并沟通软件架构的方法，特别是在前期设计会议中-作为开源和平台独立工具使用。
 
-C4-PlantUML包含用于使用PlantUML创建C4模型图的宏，构造型和其他优点（如VS Code代码段）。
+C4-PlantUML包含用于使用PlantUML创建C4模型图的macros, stereotypes和VS Code代码段。
 
 * [快速上手](#快速开始)
 * [支持架构图的类型](#支持架构图的类型)
