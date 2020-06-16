@@ -109,6 +109,7 @@ C4-PlantUML还带有一些布局选项，使创建美观实用的图表变得容
 * 上下或左右布局[LAYOUT_TOP_DOWN or LAYOUT_LEFT_RIGHT](LayoutOptions.md#layout_top_down-or-layout_left_right)
 * 展示图例[LAYOUT_WITH_LEGEND()](LayoutOptions.md#layout_with_legend)
 * 手稿模式[LAYOUT_AS_SKETCH()](LayoutOptions.md#layout_as_sketch)
+* 隐藏类型标签[HIDE_STEREOTYPE()](LayoutOptions.md#hide_stereotype)
 
 ## 更多样例
 

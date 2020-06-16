@@ -11,7 +11,7 @@ For this reason, C4-PlantUML also comes with some layout options.
 With the two procedures `LAYOUT_TOP_DOWN()` and `LAYOUT_LEFT_RIGHT()` it is possible to easily change the flow visualization of the diagram. `LAYOUT_TOP_DOWN()` is the default.
 
 ```csharp
-@startuml LAYOUT_TOP_DOWN Sample
+@startuml LAYOUT_TOP_DOWN() Sample
 !include https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/master/C4_Container.puml
 
 /' Not needed because this is the default '/
@@ -77,6 +77,10 @@ Rel(web_app, twitter, "Gets tweets from", "HTTPS")
 ```
 
 ![LAYOUT_WITH_LEGEND Sample](http://www.plantuml.com/plantuml/png/PKzDozD04BxlhnZhuKsX9hpYoLDZBAtGrj2a5azXcunsOJ-MtLb24V-x4rfRmRqCEyyppySoaWoKZ8Pj-VthiUrENzfDjrsjL_lFq4ZZDOetolOw3PY2XWkHZn-B8iWn_wdeaiufOkYT9RIKzyuK1zNBCBYzGe-wg3wygxMqTDnj2oCZOU1LLp5VAeiXzsmjnF_UsLo86aDqDfE3KNO1itAQAbAGvC9iBfehovdkaqjsaE6QzQyBUBb5Vfd3Bm7y7aRPYETEUiyw9pn3wRtcdAISdV6gUhk0igdp_Qhbau3mFd-5tRTgmagjtHXXgXc17717BvbYaYR5Nj2EYWW3a3AesIjojj_tT1dTGDQvqnWK1zH_MprZ7IDVyjoqRTqmQo8zqAVC6Ydo5wVn8pZpxyaIxP2C_WC0 "LAYOUT_WITH_LEGEND Sample")
+
+
+## HIDE_STEREOTYPE()
+Hide the stereotype.
 
 ## LAYOUT_AS_SKETCH()
 
