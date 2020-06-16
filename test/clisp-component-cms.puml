@@ -1,0 +1,52 @@
+@startuml 货运平台-内容管理组件图
+' System Context & System Landscape diagrams
+' Import: !include c4/C4_Context.puml
+' Macros: Person, Person_Ext, System, System_Ext, SystemDb, SystemDb_Ext, Boundary, System_Boundary, Enterprise_Boundary
+' Container diagram
+' Import: !include c4/C4_Container.puml
+' Additional Macros: Container, ContainerDb, Container_Boundary
+' Component diagram
+' Import: !include c4/C4_Component.puml
+' Additional Macros: Component, ComponentDb
+' Dynamic diagram
+' Import: !include c4/C4_Dynamic.puml
+' Additional Macros: Interact, Interact2, GetIndex, SetIndex
+' Deployment diagram
+' Import: !include c4/C4_Deployment.puml
+' Additional Macros: Node
+
+!include http://c4.satc.ga/c4/C4_Component.puml
+' 图例
+' LAYOUT_WITH_LEGEND()
+' 手稿，中文不友好
+' LAYOUT_AS_SKETCH()
+' LAYOUT_TOP_DOWN默认的
+' LAYOUT_LEFT_RIGHT
+title 货运平台-内容管理组件图
+
+Person(user, "货办用户/货站用户")
+Component(pgw, "服务网关", "ProxyGateway")
+Boundary(controller, "Controller层"){
+    Component(CmsColumnController, "CmsColumnController", "Spring MVC Controller", "栏目API")
+    Component(CmsNewsController, "CmsNewsController", "Spring MVC Controller", "资讯API")
+    Component(FlwApprovalController, "FlwApprovalController", "Spring MVC Controller", "审批管理API")
+    Component(FlwApprovalLevelController, "FlwApprovalLevelController", "Spring MVC Controller", "审批级次API")
+    Component(FlwBusinessFlowController, "FlwBusinessFlowController", "Spring MVC Controller", "业务流程API")
+    Component(FlwProcessController, "FlwProcessController", "Spring MVC Controller", "审批过程API")
+    Component(FlwWorkflowController, "FlwWorkflowController", "Spring MVC Controller", "流程管理API")
+}
+Component(Service, "Service层", "Service", "服务层")
+Component(Mapper, "Mapper层", "Service", "数据访问层")
+ContainerDb(db, "CargoDB实例", "Oracle 12c RAC")
+
+Rel(user, pgw, "转发请求", "https")
+Rel(pgw, controller, "转发请求", "https")
+Rel(controller, Service, "调用")
+Rel(Service, Mapper, "调用")
+Rel(Mapper, db, "持久化数据", "jdbc")
+
+
+
+
+
+@enduml

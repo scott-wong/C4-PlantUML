@@ -26,6 +26,8 @@
 #999999
 !endprocedure
 
+!define PERSON_ICON <&person,scale=6>
+
 ' Styling
 ' ##################################
 
@@ -89,19 +91,19 @@ skinparam database<<external_system>> {
 ' ##################################
 
 !unquoted procedure Person(e_alias, e_label)
-    rectangle "==e_label" <<person>> as e_alias
+    rectangle "PERSON_ICON\n ==e_label" <<person>> as e_alias
 !endprocedure
 
 !unquoted procedure Person(e_alias, e_label, e_descr)
-    rectangle "==e_label\n\n e_descr" <<person>> as e_alias
+    rectangle "PERSON_ICON\n ==e_label\n\n e_descr" <<person>> as e_alias
 !endprocedure
 
 !unquoted procedure Person_Ext(e_alias, e_label)
-    rectangle "==e_label" <<external_person>> as e_alias
+    rectangle "PERSON_ICON\n ==e_label" <<external_person>> as e_alias
 !endprocedure
 
 !unquoted procedure Person_Ext(e_alias, e_label, e_descr)
-    rectangle "==e_label\n\n e_descr" <<external_person>> as e_alias
+    rectangle "PERSON_ICON\n ==e_label\n\n e_descr" <<external_person>> as e_alias
 !endprocedure
 
 !unquoted procedure System(e_alias, e_label)

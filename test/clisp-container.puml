@@ -1,0 +1,84 @@
+@startuml 货运平台&园区系统容器图
+' System Context & System Landscape diagrams
+' Import: !include c4/C4_Context.puml
+' Macros: Person, Person_Ext, System, System_Ext, SystemDb, SystemDb_Ext, Boundary, System_Boundary, Enterprise_Boundary
+' Container diagram
+' Import: !include c4/C4_Container.puml
+' Additional Macros: Container, ContainerDb, Container_Boundary
+' Component diagram
+' Import: !include c4/C4_Component.puml
+' Additional Macros: Component, ComponentDb
+' Dynamic diagram
+' Import: !include c4/C4_Dynamic.puml
+' Additional Macros: Interact, Interact2, GetIndex, SetIndex
+' Deployment diagram
+' Import: !include c4/C4_Deployment.puml
+' Additional Macros: Node
+
+!include ../offline/C4_Container_cn.puml
+' 图例
+' LAYOUT_WITH_LEGEND() 
+' 手稿，中文不友好
+' LAYOUT_AS_SKETCH()
+' LAYOUT_TOP_DOWN默认的
+' LAYOUT_LEFT_RIGHT
+' 隐藏类型标签
+HIDE_STEREOTYPE()
+
+title 货运平台&园区系统容器图
+
+Person(user, "货办用户/货站用户")
+Person_Ext(ext_user, "货代用户/航司/运输公司")
+Container(dmz_web, "PC前端单页面应用", "vue-app with Openresty")
+Container(mobile_app, "app/小程序应用", "uniapp", "支持Android,iOS,微信小程序等")
+Container(gateway, "服务网关", "ProxyGateway", "Base on Openresty with MySQL")
+
+Boundary(micro_service, "后端微服务") {
+    Container(service_sys, "系统基础服务", "Spring Boot", "用户及角色权限管理、内容管理、文件上传下载等")
+    Container(settlement, "运单类服务", "Spring Boot", "核心电子运单服务")
+    Container(service_codb, "数据处理微服务", "Spring Boot", "数据处理、实现数据仓库服务")
+    Container(park, "物流园区管理系统", "Spring Boot", "独立系统服务，依赖其他微服务")
+}
+Boundary(midware, "中间件服务") {
+    Container(redis, "缓存数据库", "redis哨兵模式", "")
+    Container(kafka, "消息中间件", "kafka", "")
+    Container(fastdfs, "分布式文件存储", "fastdfs", "")
+}
+Boundary(db, "数据库"){
+    ContainerDb(cargodb, "CargoDB业务数据库实例", "Oracle 12c RAC")
+    ContainerDb(codb, "CODB数据仓库实例", "Oracle 12c RAC")
+    ContainerDb(es, "es文档数据库实例", "elasticsearch 6.7")
+}
+Container(kettle, "ETL处理工具", "kettle")
+Container(azkaban, "任务调度工具", "azkaban")
+
+
+Rel(user, dmz_web, "使用", "HTTPS")
+Rel(ext_user, dmz_web, "使用", "HTTPS")
+Rel(user, gateway, "内网访问", "HTTPS")
+Rel(user, mobile_app, "使用", "HTTPS")
+Rel(ext_user, mobile_app, "使用", "HTTPS")
+Rel(mobile_app, dmz_web, "使用", "HTTPS")
+
+Rel(dmz_web, gateway, "转发请求", "HTTP")
+Rel(gateway, service_sys, "转发请求", "HTTP")
+Rel(gateway, settlement, "转发请求", "HTTP")
+Rel(gateway, service_codb, "转发请求", "HTTP")
+Rel(gateway, park, "转发请求", "HTTP")
+
+Rel(service_codb, kafka, "事件推送、日志等", "TCP")
+Rel(service_sys, fastdfs, "存取文件", "TCP")
+Rel(micro_service, redis, "使用缓存", "TCP")
+Rel(service_codb, es, "存取日志")
+Rel(service_sys, cargodb, "持久化数据", "JDBC")
+Rel(settlement, cargodb, "持久化数据", "JDBC")
+Rel(service_codb, cargodb, "持久化数据", "JDBC")
+Rel(park, cargodb, "持久化数据", "JDBC")
+Rel(codb, cargodb, "数据连接", "DBLink")
+
+Rel(azkaban, kettle, "调度", "api")
+Rel(kettle, cargodb, "ETL处理")
+Rel(kettle, codb, "ETL处理")
+
+
+@enduml

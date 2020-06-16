@@ -1,0 +1,61 @@
+@startuml 货运平台&园区系统格局图
+' System Context & System Landscape diagrams
+' Import: !include c4/C4_Context.puml
+' Macros: Person, Person_Ext, System, System_Ext, SystemDb, SystemDb_Ext, Boundary, System_Boundary, Enterprise_Boundary
+' Container diagram
+' Import: !include c4/C4_Container.puml
+' Additional Macros: Container, ContainerDb, Container_Boundary
+' Component diagram
+' Import: !include c4/C4_Component.puml
+' Additional Macros: Component, ComponentDb
+' Dynamic diagram
+' Import: !include c4/C4_Dynamic.puml
+' Additional Macros: Interact, Interact2, GetIndex, SetIndex
+' Deployment diagram
+' Import: !include c4/C4_Deployment.puml
+' Additional Macros: Node
+
+!include offline/C4_Context.puml
+' 图例
+' LAYOUT_WITH_LEGEND() 
+' 手稿，中文不友好
+' LAYOUT_AS_SKETCH()
+' LAYOUT_TOP_DOWN默认的
+' LAYOUT_LEFT_RIGHT
+title 货运平台&园区系统格局图
+
+Person(user, "货办用户/货站用户")
+Person_Ext(ext_user, "货代用户/航司/运输公司")
+Enterprise_Boundary(eking, "易航科技") {
+    System(clisp, "货运物流综合平台", "面向机场货运外部用户的业务办理和查询服务平台")
+    System(walms, "货运园区管理系统", "提供园区基础数据维护，站台调度、停车场管理等服务")
+}
+Enterprise_Boundary(tsystem, "德电") {
+    System(esb, "ESB系统", "RabbitMQ")
+}
+System_Ext(ext_system, "其他外部系统", "AODB\三大货站系统\航司系统\货代系统")
+
+System_Ext(ucs, "统一通信", "短信")
+System_Ext(sws, "国际贸易单一窗口", "北京")
+System_Ext(scs, "智慧安检系统", "中科软")
+System_Ext(bcst, "BCS货站系统", "Cosys产品")
+System_Ext(push, "移动端消息推送", "UniPush")
+System_Ext(cms, "海关北京分中心", "舱单系统")
+System_Ext(efs, "翌飞货代平台", "代理人系统")
+
+Rel(user, clisp, "使用", "HTTPS")
+Rel(user, walms, "使用", "HTTPS")
+Rel(ext_user, clisp, "使用", "HTTPS")
+Rel(clisp, esb, "数据交互", "AMQP")
+Rel(clisp, ucs, "数据交互", "HTTP")
+Rel(clisp, push, "数据交互", "HTTP")
+
+Rel(walms, esb, "数据交互", "AMQP")
+Rel(esb, sws, "数据交互", "AMQP")
+Rel(esb, scs, "数据交互", "AMQP")
+Rel(esb, bcst, "数据交互", "AMQP")
+Rel(esb, efs, "数据交互", "AMQP")
+Rel(esb, ext_system, "数据交互", "AMQP")
+Rel(sws, cms, "数据交互", "未知")
+
+@enduml

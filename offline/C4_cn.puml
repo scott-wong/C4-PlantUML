@@ -42,7 +42,7 @@ skinparam Arrow {
     FontSize 12
 }
 
-skinparam rectangle<<boundary>> {
+skinparam rectangle<<边界>> {
     Shadowing false
     StereotypeFontSize 0
     FontColor #444444
@@ -72,11 +72,11 @@ skinparam rectangle<<boundary>> {
 ' ##################################
 
 !unquoted procedure Boundary(e_alias, e_label)
-    rectangle "==e_label" <<boundary>> as e_alias
+    rectangle "==e_label" <<边界>> as e_alias
 !endprocedure
 
 !unquoted procedure Boundary(e_alias, e_label, e_type)
-    rectangle "==e_label\n<size:$TECHN_FONT_SIZE>[e_type]</size>" <<boundary>> as e_alias
+    rectangle "==e_label\n<size:$TECHN_FONT_SIZE>[e_type]</size>" <<边界>> as e_alias
 !endprocedure
 
 ' Relationship

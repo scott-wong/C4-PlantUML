@@ -1,4 +1,4 @@
-!include C4_Container.puml
+!include C4_Container_cn.puml
 ' uncomment the following line and comment the first to use locally
 ' !include C4_Container.puml
 
@@ -17,28 +17,28 @@
 ' Styling
 ' ##################################
 
-skinparam rectangle<<component>> {
+skinparam rectangle<<组件>> {
     StereotypeFontColor ELEMENT_FONT_COLOR()
     FontColor #000000
     BackgroundColor COMPONENT_BG_COLOR()
     BorderColor #78A8D8
 }
 
-skinparam database<<component>> {
+skinparam database<<组件>> {
     StereotypeFontColor ELEMENT_FONT_COLOR()
     FontColor #000000
     BackgroundColor COMPONENT_BG_COLOR()
     BorderColor #78A8D8
 }
 
-skinparam rectangle<<external_component>> {
+skinparam rectangle<<外部组件>> {
     StereotypeFontColor ELEMENT_FONT_COLOR
     FontColor #000000
     BackgroundColor EXTERNAL_COMPONENT_BG_COLOR
     BorderColor #8A8A8A
 }
 
-skinparam database<<external_component>> {
+skinparam database<<外部组件>> {
     StereotypeFontColor ELEMENT_FONT_COLOR
     FontColor #000000
     BackgroundColor EXTERNAL_COMPONENT_BG_COLOR
@@ -65,17 +65,17 @@ skinparam database<<external_component>> {
 ' ##################################
 
 !unquoted procedure Component(e_alias, e_label, e_techn)
-    rectangle "==e_label\n//<size:$TECHN_FONT_SIZE>[e_techn]</size>//" <<component>> as e_alias
+    rectangle "==e_label\n//<size:$TECHN_FONT_SIZE>[e_techn]</size>//" <<组件>> as e_alias
 !endprocedure
 
 !unquoted procedure Component(e_alias, e_label, e_techn, e_descr)
-    rectangle "==e_label\n//<size:$TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<component>> as e_alias
+    rectangle "==e_label\n//<size:$TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<组件>> as e_alias
 !endprocedure
 
 !unquoted procedure ComponentDb(e_alias, e_label, e_techn)
-    database "==e_label\n//<size:$TECHN_FONT_SIZE>[e_techn]</size>//" <<component>> as e_alias
+    database "==e_label\n//<size:$TECHN_FONT_SIZE>[e_techn]</size>//" <<组件>> as e_alias
 !endprocedure
 
 !unquoted procedure ComponentDb(e_alias, e_label, e_techn, e_descr)
-    database "==e_label\n//<size:$TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<component>> as e_alias
+    database "==e_label\n//<size:$TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<组件>> as e_alias
 !endprocedure

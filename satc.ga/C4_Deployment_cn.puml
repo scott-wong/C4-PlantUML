@@ -1,4 +1,4 @@
-!include C4_Component.puml
+!include http://c4.satc.ga/c4/C4_Component_cn.puml
 ' uncomment the following line and comment the first to use locally
 ' !include C4_Component.puml
 
@@ -18,7 +18,7 @@
 ' Styling
 ' ##################################
 
-skinparam rectangle<<node>> {
+skinparam rectangle<<服务器节点>> {
   Shadowing false
   StereotypeFontSize 0
   FontColor NODE_FONT_COLOR()
@@ -43,6 +43,6 @@ skinparam rectangle<<node>> {
 ' PlantUML does not support automatic line breaks of container, if e_techn is very long insert line breaks with 
 ' "</size>\n<size:TECHN_FONT_SIZE>"
 !unquoted procedure Node(e_alias, e_label, e_techn)
-  ' rectangle "==e_label\n<size:$TECHN_FONT_SIZE>[e_techn]</size>" <<node>> as e_alias
-  rectangle "==e_label\n//<size:$TECHN_FONT_SIZE>[e_techn]</size>//" <<node>> as e_alias
+  ' rectangle "==e_label\n<size:$TECHN_FONT_SIZE>[e_techn]</size>" <<服务器节点>> as e_alias
+  rectangle "==e_label\n//<size:$TECHN_FONT_SIZE>[e_techn]</size>//" <<服务器节点>> as e_alias
 !endprocedure

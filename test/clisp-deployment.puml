@@ -1,0 +1,106 @@
+@startuml 货运平台&园区系统部署图
+' System Context & System Landscape diagrams
+' Import: !include c4/C4_Context.puml
+' Macros: Person, Person_Ext, System, System_Ext, SystemDb, SystemDb_Ext, Boundary, System_Boundary, Enterprise_Boundary
+' Container diagram
+' Import: !include c4/C4_Container.puml
+' Additional Macros: Container, ContainerDb, Container_Boundary
+' Component diagram
+' Import: !include c4/C4_Component.puml
+' Additional Macros: Component, ComponentDb
+' Dynamic diagram
+' Import: !include c4/C4_Dynamic.puml
+' Additional Macros: Interact, Interact2, GetIndex, SetIndex
+' Deployment diagram
+' Import: !include c4/C4_Deployment.puml
+' Additional Macros: Node
+
+!include http://c4.satc.ga/c4/C4_Deployment.puml
+' 图例
+' LAYOUT_WITH_LEGEND()
+' 手稿，中文不友好
+' LAYOUT_AS_SKETCH()
+' LAYOUT_TOP_DOWN默认的
+' LAYOUT_LEFT_RIGHT()
+title 货运平台&园区系统部署图
+
+Node(customer_pc, "客户PC", "Chrome/Edge"){
+    Container(spa, "单页面应用", "vue")
+}
+Node(customer_app, "客户手机", "App/小程序"){
+    Container(app, "原生应用/小程序", "uniapp")
+}
+Node(data_center, "机场数据中心", "data center"){
+    
+    Node(dmz, "外网入口", "Radware"){
+        System_Ext(radware, "Radware负载均衡")
+    }
+    Node(dmz_server, "VM*2", "OS: RHEL 7.2"){
+        Container(dmz_web, "DMZ Web&负载均衡服务", "Openresty")    
+    }
+
+    Node(gateway, "VM*2", "OS: RHEL 7.2"){
+        Container(pgw, "服务网关", "ProxyGateway")    
+    }
+    Node(gateway_db, "VM*2", "OS: RHEL 7.2"){
+        Container(pgw_db, "服务网关数据库", "MySQL 5.6")    
+    }
+    Node(app_server1, "VM*2", "OS: RHEL 7.2"){
+        Container(service_sys, "系统基础服务", "Spring Boot", "用户及角色权限管理、内容管理、文件上传下载等")
+        Container(settlement, "运单类服务", "Spring Boot", "核心电子运单服务")
+    }
+    Node(app_server2, "VM*2", "OS: RHEL 7.2"){
+        Container(service_codb, "数据处理微服务", "Spring Boot", "数据处理、实现数据仓库服务")
+        Container(park, "物流园区管理系统", "Spring Boot", "独立系统服务，依赖其他微服务")
+    }
+
+    Node(redis_server, "VM*2", "OS: RHEL 7.2") {
+        Container(redis, "缓存数据库", "redis 5.0 哨兵模式", "")
+    }
+    Node(kafka_server, "VM*3", "OS: RHEL 7.2") {
+        Container(kafka, "消息中间件", "kafka 2.2", "")
+    }
+    Node(fastdfs_server, "VM*2", "OS: RHEL 7.2") {
+        Container(fastdfs, "分布式文件存储", "fastdfs", "")
+    }
+
+    Node(db, "物理机*2", "OS: RHEL 6.9"){
+        ContainerDb(cargodb, "CargoDB业务数据库实例", "Oracle 12c RAC")
+        ContainerDb(codb, "CODB数据仓库实例", "Oracle 12c RAC")
+        ContainerDb(es, "es文档数据库实例", "elasticsearch 6.7")
+        Container(kettle, "ETL处理工具", "kettle")
+        Container(azkaban, "任务调度工具", "azkaban")
+    }
+}
+
+Rel(spa, radware, "访问", "https")
+Rel(app, radware, "访问", "https")
+Rel(radware, dmz_web, "转发请求", "tcp")
+Rel(dmz_web, pgw, "转发请求", "http")
+Rel(pgw, pgw_db, "服务配置持久化", "jdbc")
+Rel(pgw, service_sys, "转发请求", "http")
+Rel(pgw, settlement, "转发请求", "http")
+Rel(pgw, service_codb, "转发请求", "http")
+Rel(pgw, park, "转发请求", "http")
+
+
+
+Rel(service_codb, kafka, "事件推送、日志等", "TCP")
+Rel(service_sys, fastdfs, "存取文件", "TCP")
+Rel(service_sys, redis, "使用缓存", "TCP")
+Rel(settlement, redis, "使用缓存", "TCP")
+Rel(service_codb, redis, "使用缓存", "TCP")
+Rel(park, redis, "使用缓存", "TCP")
+Rel(service_codb, es, "存取日志")
+Rel(service_sys, cargodb, "持久化数据", "JDBC")
+Rel(settlement, cargodb, "持久化数据", "JDBC")
+Rel(service_codb, cargodb, "持久化数据", "JDBC")
+Rel(park, cargodb, "持久化数据", "JDBC")
+Rel(codb, cargodb, "数据连接", "DBLink")
+
+Rel(azkaban, kettle, "调度", "api")
+Rel(kettle, cargodb, "ETL处理")
+Rel(kettle, codb, "ETL处理")
+
+
+@enduml
