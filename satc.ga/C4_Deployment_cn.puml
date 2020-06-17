@@ -32,9 +32,9 @@ skinparam rectangle<<服务器节点>> {
 !procedure LAYOUT_WITH_LEGEND()
   hide stereotype
   legend right
-    |=                      |= Type                |
-    |<NODE_BG_COLOR()>      | deployment node      |
-    |<CONTAINER_BG_COLOR()> | deployment container |
+    |=                      |= Type        |
+    |<NODE_BG_COLOR()>      | 部署节点      |
+    |<CONTAINER_BG_COLOR()> | 部署服务/容器 |
   endlegend
 !endprocedure
 
