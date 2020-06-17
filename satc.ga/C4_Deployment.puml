@@ -32,9 +32,9 @@ skinparam rectangle<<node>> {
 !procedure LAYOUT_WITH_LEGEND()
   hide stereotype
   legend right
-    |=                    |= Type                |
-    |<NODE_BG_COLOR>      | deployment node      |
-    |<CONTAINER_BG_COLOR> | deployment container |
+    |=                      |= Type                |
+    |<NODE_BG_COLOR()>      | deployment node      |
+    |<CONTAINER_BG_COLOR()> | deployment container |
   endlegend
 !endprocedure
 

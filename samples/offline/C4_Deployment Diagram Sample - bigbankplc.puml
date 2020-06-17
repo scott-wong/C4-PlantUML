@@ -33,8 +33,8 @@ Node(Deployment__Live__BigBankplc__3f81fb2, "Big Bank plc", "Big Bank plc data c
     }
   }
 }
-Node(Deployment__Live__Customer'scomputer__2c36bed, "Customer's computer", "Microsoft Windows or Apple </size>\n<size:TECHN_FONT_SIZE>macOS") {
-  Node(Deployment__Live__Customer'scomputer__WebBrowser__18307f7, "Web Browser", "Google Chrome, Mozilla </size>\n<size:TECHN_FONT_SIZE>Firefox, Apple Safari or </size>\n<size:TECHN_FONT_SIZE>Microsoft Edge") {
+Node(Deployment__Live__Customer'scomputer__2c36bed, "Customer's computer", "Microsoft Windows or Apple macOS") {
+  Node(Deployment__Live__Customer'scomputer__WebBrowser__18307f7, "Web Browser", "Google Chrome, Mozilla Firefox, Apple Safari or Microsoft Edge") {
     Container(InternetBankingSystem__SinglePageApplication2__22cc62b, "Single-Page Application", "JavaScript and Angular", "Provides all of the Internet banking functionality to customers via their web browser.")
   }
 }
