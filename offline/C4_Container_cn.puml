@@ -51,12 +51,12 @@ skinparam database<<外部服务/容器>> {
 !procedure LAYOUT_WITH_LEGEND()
     hide stereotype
     legend right
-        |=                               |= Type              |
-        |<PERSON_BG_COLOR()>             | person             |
-        |<EXTERNAL_PERSON_BG_COLOR()>    | external person    |
-        |<SYSTEM_BG_COLOR()>             | system             |
-        |<EXTERNAL_SYSTEM_BG_COLOR()>    | external system    |
-        |<CONTAINER_BG_COLOR()>          | container          |
+        |=                               |= Type      |
+        |<PERSON_BG_COLOR()>             | 用户       |
+        |<EXTERNAL_PERSON_BG_COLOR()>    | 外部用户    |
+        |<SYSTEM_BG_COLOR()>             | 系统        |
+        |<EXTERNAL_SYSTEM_BG_COLOR()>    | 外部系统    |
+        |<CONTAINER_BG_COLOR()>          | 服务/容器   |
     endlegend
 !endprocedure
 
