@@ -1,10 +1,8 @@
-@startuml
-!include https://raw.githubusercontent.com/scott-wong/C4-PlantUML/master/C4_Dynamic.puml
-' uncomment the following line and comment the first to use locally
-' !include C4_Dynamic
 
-LAYOUT_TOP_DOWN
-' LAYOUT_AS_SKETCH()
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Dynamic.puml
+
+LAYOUT_TOP_DOWN()
 LAYOUT_WITH_LEGEND()
 
 Person(customer, Customer, "A customer")
@@ -19,21 +17,16 @@ System_Boundary(c1, "Customer Information") {
     Container(audit_store, "Audit Store", "Event Store", "Stores information about events that have happened")
 }
 
-'simple order with Interact
-Interact(customer, app, "Updates his profile using", "HTTPS")
-Interact(app, customer_service, "Updates customer information using", "JSON/HTTPS")
-Interact(customer_service, customer_db, "Stores data in", "JDBC")
+Rel_D(customer, app, "Updates his profile using", "HTTPS")
+Rel(app, customer_service, "Updates customer information using", "JSON/HTTPS")
+Rel_R(customer_service, customer_db, "Stores data in", "JDBC")
 
-'specific order with Interact2; GetIndex(0)..change auto increment value to 0; "..."..custom index format
-Interact2_Right("GetIndex(0)-1", customer_service, message_bus, "Sends customer update events to", "async")
-'GetIndex().. increment +1
-Interact2_Up("GetIndex()-2", customer_service, app, "Confirm update to", "async")
+RelIndex_D(Index()-1, customer_service, message_bus, "Sends customer update events to", "async")
+RelIndex_U(LastIndex()-2, customer_service, app, "Confirm update to", "async")
 
-Interact2("GetIndex()-1", message_bus, reporting_service, "Sends customer update events to", "async")
-Interact2("GetIndex()-1", reporting_service, reporting_db, "Stores data in")
+RelIndex_L(Index()-1, message_bus, reporting_service, "Sends customer update events to", "async")
+RelIndex(Index()-1, reporting_service, reporting_db, "Stores data in")
 
-' specify a new index
-SetIndex(5)
-Interact2("GetIndex()-2", message_bus, audit_service, "Sends customer update events to", "async")
-Interact2("GetIndex()-2", audit_service, audit_store, "Stores events in")
+RelIndex_R(SetIndex(5)-2, message_bus, audit_service, "Sends customer update events to", "async")
+RelIndex(Index()-2, audit_service, audit_store, "Stores events in")
 @enduml
